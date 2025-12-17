@@ -32,7 +32,7 @@ jobs:
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          docker pull ${{ secrets.DOCKER_USERNAME }}/dec-mini-proect:latest
-          docker stop dec-mini-project || true
-          docker rm dec-mini-project || true
+          docker pull ${{ secrets.DOCKER_USERNAME }}/dec-mini-project:latest
+          docker stop studybud || true
+          docker rm studybud || true
           docker run -d -p 8082:8000 --name studybud ${{ secrets.DOCKER_USERNAME }}/dec-mini-project:latest
